@@ -1,0 +1,22 @@
+#include <Ultrasonic.h>
+
+
+Ultrasonic ultrasonic(11);
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+
+void loop()
+{
+  long RangeInInches;
+  long RangeInCentimeters;
+   
+  Serial.println("Distance in centimeters:");
+  RangeInCentimeters = ultrasonic.MeasureInCentimeters();
+  Serial.print(RangeInCentimeters);
+  Serial.println("cm");
+  delay(2000);
+}
